@@ -2,6 +2,7 @@ import "./Toolbar.css";
 
 import React from "react";
 import NavigationItems from "./../NavigationItems/NavigationItems";
+import UserInfo from "../UserInfo/UserInfo";
 
 const Toolbar = () => {
   return (
@@ -9,6 +10,7 @@ const Toolbar = () => {
       <nav>
         <NavigationItems />
       </nav>
+      <UserInfo />
     </header>
   );
 };
