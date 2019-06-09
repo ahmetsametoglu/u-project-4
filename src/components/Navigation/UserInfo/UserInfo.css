@@ -1,0 +1,15 @@
+.user-info{
+ display: flex;
+ align-items: center;
+}
+
+.user-info img{
+    height: 40px;
+}
+
+.user-info span{
+    margin-right:15px; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+}
