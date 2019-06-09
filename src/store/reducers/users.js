@@ -1,7 +1,10 @@
-export const users = (state = {}, action) => {
-    switch (action.type) {
+import * as actionTypes from "../actions/actionTypes";
 
-        default:
-            return state;
-    }
+export const users = (state = {}, action) => {
+  switch (action.type) {
+    case actionTypes.RECEIVE_USERS:
+      return { ...state, ...action.questions };
+    default:
+      return state;
+  }
 };
