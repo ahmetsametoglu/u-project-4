@@ -1,11 +1,14 @@
 import "./Toolbar.css";
 
 import React from "react";
+import NavigationItems from "./../NavigationItems/NavigationItems";
 
 const Toolbar = () => {
   return (
     <header className="toolbar">
-      <nav>Home | Leader Board | New Question</nav>
+      <nav>
+        <NavigationItems />
+      </nav>
     </header>
   );
 };
