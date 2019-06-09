@@ -1,0 +1,16 @@
+.toolbar {
+    height: 56px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20%;
+    z-index: 90;
+    box-shadow: -7px 15px 5px -12px rgba(135,194,240,1);
+}
+
+.toolbar nav {
+    height: 100%;
+}
