@@ -1,9 +1,14 @@
 import * as actions from "./index";
+import * as api from "../../api";
 
 const default_auth_user = "tylermcginnis";
 
 export const handleInitialData = () => {
   return dispatch => {
-    dispatch(actions.setAuthUser(default_auth_user));
+    return api.getInitialData().then(({ users, questions }) => {
+      dispatch(actions.receiveUsers(users));
+      dispatch(actions.receiveQuestions(questions));
+      dispatch(actions.setAuthUser(default_auth_user));
+    });
   };
 };
