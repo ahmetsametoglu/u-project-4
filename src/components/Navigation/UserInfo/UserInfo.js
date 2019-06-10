@@ -1,6 +1,7 @@
 import "./UserInfo.css";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Logout from "../Logout/Logout";
 
 class UserInfo extends Component {
   render() {
@@ -15,6 +16,7 @@ class UserInfo extends Component {
             src={user.avatarURL}
             alt={`Avatar of ${user.name}`}
           />
+          <Logout />
         </div>
       );
     }
