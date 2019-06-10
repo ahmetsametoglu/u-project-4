@@ -1,0 +1,18 @@
+.logout-button {
+    border:none;
+    border-bottom: 0.6px maroon solid;
+    border-top: 0.6px maroon solid;
+	cursor:pointer;
+	background-color:transparent;
+	font-family:cursive;
+	font-size:17px;
+	padding:4px 8px;
+    color: maroon;
+    margin-left: 10px;
+}
+.logout-button:hover {
+	color: red;
+    border:none;
+    border-bottom: 0.6px red solid;
+    border-top: 0.6px red solid;
+}
