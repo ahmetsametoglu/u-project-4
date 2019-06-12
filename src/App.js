@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Route, BrowserRouter } from "react-router-dom";
 
 import "./App.css";
@@ -15,13 +15,21 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <BrowserRouter>
-        <Layout>
+    let pages = null;
+    console.log("isAuth:", this.props.isAuth);
+
+    if (this.props.isAuth) {
+      pages = (
+        <Fragment>
           <Route path="/new-question" component={NewQuestion} />
           <Route path="/leader-board" component={LeaderBoard} />
           <Route path="/" exact component={Home} />
-        </Layout>
+        </Fragment>
+      );
+    }
+    return (
+      <BrowserRouter>
+        <Layout>{pages}</Layout>
       </BrowserRouter>
     );
   }
@@ -31,7 +39,13 @@ const mapDispatchToProps = dispatch => {
     handleInitialData: () => dispatch(actions.handleInitialData())
   };
 };
+
+const mapStateToProps = ({ auth }) => {
+  return {
+    isAuth: !!auth.userId
+  };
+};
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(App);
