@@ -1,0 +1,31 @@
+.question-list-container {
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+  margin-top: 20px;
+  border: solid 1px #cccc;
+}
+
+.list-selection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.selection-button {
+  cursor: pointer;
+  height: 50px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active {
+  background-color: #cccc;
+}
