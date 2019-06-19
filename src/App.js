@@ -6,6 +6,7 @@ import Layout from "./hoc/Layout/Layout";
 import Home from "./pages/Home";
 import LeaderBoard from "./pages/LeaderBoard";
 import NewQuestion from "./pages/NewQuestion";
+import Question from "./pages/Question";
 import { connect } from "react-redux";
 import * as actions from "./store/actions";
 
@@ -16,12 +17,12 @@ class App extends Component {
 
   render() {
     let pages = null;
-    console.log("isAuth:", this.props.isAuth);
 
     if (this.props.isAuth) {
       pages = (
         <Fragment>
           <Route path="/new-question" component={NewQuestion} />
+          <Route path="/question/:id" component={Question} />
           <Route path="/leader-board" component={LeaderBoard} />
           <Route path="/" exact component={Home} />
         </Fragment>
