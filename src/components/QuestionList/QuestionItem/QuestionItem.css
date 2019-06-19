@@ -1,0 +1,71 @@
+.question-item-container {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #cccccc;
+}
+
+.who-ask {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  background-color: whitesmoke;
+  font-size: 1rem;
+  font-weight: 600;
+  height: 50px;
+}
+
+.question {
+  display: flex;
+  height: 120px;
+}
+
+.owner-avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 0.5px solid #000000f4;
+  margin: 10px 0;
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.avatar {
+  margin: auto;
+  height: 90px;
+  width: auto;
+}
+
+.question-detail {
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.would-you-rather {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.tip {
+}
+
+.view-button {
+  height: 30px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #10b292;
+  color: #10b292;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-button:hover {
+  color: white;
+  background-color: #10b292;
+}
