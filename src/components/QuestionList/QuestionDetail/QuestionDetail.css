@@ -1,0 +1,17 @@
+.question-detail-container {
+  width: 600px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.question-action {
+  width: 100%;
+  padding: 10px;
+  height: auto;
+}
+
+.question-header {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px;
+}
