@@ -29,7 +29,6 @@ const mapStateToProps = state => {
     !!state.users && !!state.auth.userId
       ? state.users[state.auth.userId]
       : null;
-  console.log("loginUser:", loginUser);
 
   return {
     user: loginUser
