@@ -3,11 +3,12 @@ import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import AnsweredQuestion from "./AnsweredQuestion/AnsweredQuestion";
 import UnansweredQuestion from "./UnansweredQuestion/UnansweredQuestion";
+import * as actions from "../../../store/actions";
 
-const QuestionDetail = ({ question, owner, answer }) => {
+const QuestionDetail = ({ question, owner, answer, setAnswer }) => {
   const onHandleAnswer = answer => {
-    if (!!answer) {
-      //TODO: save answer
+    if (!!answer && answer !== "") {
+      setAnswer(question.id, answer);
     }
   };
   return (
@@ -49,4 +50,14 @@ const mapStateToProps = ({ questions, users, auth }, { id }) => {
   };
 };
 
-export default connect(mapStateToProps)(QuestionDetail);
+const mapDispatchToProps = dispatch => {
+  return {
+    setAnswer: (questionId, answer) =>
+      dispatch(actions.handleSetAnswerToQuestion(questionId, answer))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(QuestionDetail);
