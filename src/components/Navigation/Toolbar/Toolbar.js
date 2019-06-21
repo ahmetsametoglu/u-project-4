@@ -6,7 +6,7 @@ import UserInfo from "../UserInfo/UserInfo";
 
 const Toolbar = () => {
   return (
-    <header className="toolbar">
+    <header className="custom-toolbar">
       <nav>
         <NavigationItems />
       </nav>
