@@ -26,7 +26,7 @@ const QuestionDetail = ({ question, owner, answer, setAnswer }) => {
             </div>
             <div className="question-action">
               {!!answer ? (
-                <AnsweredQuestion question={question} />
+                <AnsweredQuestion question={question} answer={answer} />
               ) : (
                 <UnansweredQuestion
                   question={question}

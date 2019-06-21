@@ -1,13 +1,51 @@
 .option-item-container {
+  position: relative;
   margin: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   border: 1px solid gainsboro;
-  border-radius: 10px;
+  border-radius: 5px;
+  background-color: ghostwhite;
 }
 .option-text {
+  font-weight: bold;
 }
 .option-progress-bar {
-  height: 40px;
+  margin-top: 15px;
+  height: 1.5rem !important;
 }
+
+.progress-bar {
+  background-color: #10b292;
+}
+
 .option-summary {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.selection-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #47f3d15e;
+  border-radius: 5px;
+}
+
+.your-vote {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 11px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: -15px;
+  right: -15px;
+  background-color: #e0c739;
 }
