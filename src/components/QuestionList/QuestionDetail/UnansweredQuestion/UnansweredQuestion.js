@@ -2,11 +2,13 @@ import "./UnansweredQuestion.css";
 import React, { Fragment, useState } from "react";
 
 function UnansweredQuestion({ question, handleAnswer }) {
-  const [answer, setAnswer] = useState("unanswered");
+  const [answer, setAnswer] = useState("");
 
   const handleOptionChange = event => {
     console.log(event.target.value);
-    setAnswer(event.target.value);
+    if (event.target.value.trim() !== "") {
+      setAnswer(event.target.value);
+    }
   };
   return (
     <Fragment>
