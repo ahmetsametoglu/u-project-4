@@ -27,23 +27,21 @@ const QuestionList = ({
   };
   return (
     <div className="question-list-container">
-      <div className="list">
-        <div className="list-selection">
-          <div
-            className={getClassName("unanswered")}
-            onClick={() => setSelectedType("unanswered")}
-          >
-            Unanswered Questions
-          </div>
-          <div
-            className={getClassName("answered")}
-            onClick={() => setSelectedType("answered")}
-          >
-            Answered Questions
-          </div>
+      <div className="list-selection">
+        <div
+          className={getClassName("unanswered")}
+          onClick={() => setSelectedType("unanswered")}
+        >
+          Unanswered Questions
         </div>
-        <div className="list-items">{listDom}</div>
+        <div
+          className={getClassName("answered")}
+          onClick={() => setSelectedType("answered")}
+        >
+          Answered Questions
+        </div>
       </div>
+      <div className="list-items">{listDom}</div>
     </div>
   );
 };

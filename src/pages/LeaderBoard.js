@@ -1,7 +1,14 @@
 import React from "react";
+import { connect } from "react-redux";
 
 const LeaderBoard = () => {
-  return <div>TODO: Leader Board Page</div>;
+  return <div className="leader-board-page">TODO: Leader Board Page</div>;
 };
 
-export default LeaderBoard;
+const mapStateToProps = ({ users }) => {
+  return {
+    users
+  };
+};
+
+export default connect(mapStateToProps)(LeaderBoard);

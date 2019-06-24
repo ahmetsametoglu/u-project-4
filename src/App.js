@@ -30,7 +30,9 @@ class App extends Component {
     }
     return (
       <BrowserRouter>
-        <Layout>{pages}</Layout>
+        <Layout>
+          <div className="page-container">{pages}</div>
+        </Layout>
       </BrowserRouter>
     );
   }

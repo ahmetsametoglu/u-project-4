@@ -13,27 +13,25 @@ const QuestionDetail = ({ question, owner, answer, setAnswer }) => {
   };
   return (
     <Fragment>
-      <div className="question-detail-container">
-        <div className="question-item-container">
-          <div className="who-ask">{owner.name} asks:</div>
-          <div className="question">
-            <div className="owner-avatar">
-              <img
-                className="avatar"
-                src={owner.avatarURL}
-                alt={`Avatar of ${owner.name}`}
+      <div>
+        <div className="who-ask">{owner.name} asks:</div>
+        <div className="question">
+          <div className="owner-avatar">
+            <img
+              className="avatar"
+              src={owner.avatarURL}
+              alt={`Avatar of ${owner.name}`}
+            />
+          </div>
+          <div className="question-action">
+            {!!answer ? (
+              <AnsweredQuestion question={question} answer={answer} />
+            ) : (
+              <UnansweredQuestion
+                question={question}
+                handleAnswer={onHandleAnswer}
               />
-            </div>
-            <div className="question-action">
-              {!!answer ? (
-                <AnsweredQuestion question={question} answer={answer} />
-              ) : (
-                <UnansweredQuestion
-                  question={question}
-                  handleAnswer={onHandleAnswer}
-                />
-              )}
-            </div>
+            )}
           </div>
         </div>
       </div>
