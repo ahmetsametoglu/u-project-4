@@ -6,8 +6,11 @@ export const questions = (state = {}, action) => {
       return { ...state, ...action.questions };
 
     case actionTypes.SET_ANSWER_TO_QUESTION:
-      console.log("reducer QUESTION state", state);
       return setAnswerToQuestion(state, action);
+
+    case actionTypes.SAVE_QUESTION:
+      return saveQuestion(state, action);
+
     default:
       return state;
   }
@@ -15,9 +18,7 @@ export const questions = (state = {}, action) => {
 
 const setAnswerToQuestion = (state, action) => {
   const { questionId, answer, authUserId } = action;
-  console.log("question=>", questionId, answer, authUserId);
   const question = state[questionId];
-  console.log("question=>", question);
 
   const questions = {
     ...state,
@@ -28,6 +29,19 @@ const setAnswerToQuestion = (state, action) => {
         votes: [...question[answer].votes, authUserId]
       }
     }
+  };
+
+  return {
+    ...state,
+    ...questions
+  };
+};
+
+const saveQuestion = (state, action) => {
+  const { question } = action;
+  const questions = {
+    ...state,
+    [question.id]: question
   };
 
   return {
