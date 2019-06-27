@@ -20,19 +20,17 @@ class App extends Component {
 
     if (this.props.isAuth) {
       pages = (
-        <Fragment>
+        <div className="page-container">
           <Route path="/new-question" component={NewQuestion} />
           <Route path="/question/:id" component={Question} />
           <Route path="/leader-board" component={LeaderBoard} />
           <Route path="/" exact component={Home} />
-        </Fragment>
+        </div>
       );
     }
     return (
       <BrowserRouter>
-        <Layout>
-          <div className="page-container">{pages}</div>
-        </Layout>
+        <Layout>{pages}</Layout>
       </BrowserRouter>
     );
   }
