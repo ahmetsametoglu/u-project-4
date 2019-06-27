@@ -1,5 +1,5 @@
 import * as actionTypes from "./actionTypes";
-import { saveQuestionAnswer } from "../../api";
+import { saveQuestionAnswer, saveQuestion } from "../../api";
 
 export const receiveQuestions = questions => {
   return {
@@ -23,5 +23,19 @@ export const handleSetAnswerToQuestion = (questionId, answer) => {
     return saveQuestionAnswer(state.auth.userId, questionId, answer).then(_ => {
       dispatch(setAnswerToQuestion(questionId, answer, state.auth.userId));
     });
+  };
+};
+
+export const handleSaveQuestion = (optionOneText, optionTwoText) => {
+  return (dispatch, getState) => {
+    const state = getState();
+    return saveQuestion(optionOneText, optionTwoText, state.auth.userId).then(
+      question => {
+        dispatch({
+          type: actionTypes.SAVE_QUESTION,
+          question
+        });
+      }
+    );
   };
 };
