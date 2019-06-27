@@ -1,7 +1,8 @@
 import React from "react";
+import NewQuestionForm from "../components/NewQuestionForm/NewQuestionForm";
 
 const NewQuestion = () => {
-  return <div>TODO: New Question Page</div>;
+  return <NewQuestionForm />;
 };
 
 export default NewQuestion;
