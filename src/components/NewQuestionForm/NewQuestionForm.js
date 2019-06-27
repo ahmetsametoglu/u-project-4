@@ -2,14 +2,13 @@ import "./NewQuestionForm.css";
 
 import React, { useState } from "react";
 
-function NewQuestionForm() {
+function NewQuestionForm({ saveQuestion }) {
   const [optionOne, setOptionOne] = useState("");
   const [optionTwo, setOptionTwo] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
-
-    //TODO: submit new question
+    saveQuestion(optionOne, optionTwo);
   };
   const isButtonDisable = () => {
     return optionOne.trim() === "" || optionTwo.trim() === "";
