@@ -9,8 +9,8 @@ const NavigationItems = () => {
       <NavigationItem link="/" exact>
         Home
       </NavigationItem>
-      <NavigationItem link="/new-question">New Question</NavigationItem>
-      <NavigationItem link="/leader-board">Leader Board</NavigationItem>
+      <NavigationItem link="/add">New Question</NavigationItem>
+      <NavigationItem link="/leaderboard">Leader Board</NavigationItem>
     </ul>
   );
 };

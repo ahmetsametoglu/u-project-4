@@ -19,7 +19,7 @@ const QuestionItem = ({ question, owner }) => {
         <div className="question-detail">
           <div className="would-you-rather">Would you rather ?</div>
           <div className="tip">... {question.optionOne.text}...</div>
-          <Link to={`/question/${question.id}`} className="view-button">
+          <Link to={`/questions/${question.id}`} className="view-button">
             View Poll
           </Link>
         </div>

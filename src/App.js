@@ -21,9 +21,9 @@ class App extends Component {
     if (this.props.isAuth) {
       pages = (
         <div className="page-container">
-          <Route path="/new-question" component={NewQuestion} />
-          <Route path="/question/:id" component={Question} />
-          <Route path="/leader-board" component={LeaderBoard} />
+          <Route path="/add" component={NewQuestion} />
+          <Route path="/questions/:id" component={Question} />
+          <Route path="/leaderboard" component={LeaderBoard} />
           <Route path="/" exact component={Home} />
         </div>
       );
