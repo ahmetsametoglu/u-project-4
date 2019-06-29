@@ -4,7 +4,8 @@ import { ProgressBar } from "react-bootstrap";
 import React from "react";
 
 const OptionItem = props => {
-  const percentage = (100 * props.optionVoteCount) / props.totalVoteCount;
+  const percentage =
+    Math.round((1000 * props.optionVoteCount) / props.totalVoteCount) / 10;
   const selectionContainer = (
     <div className="selection-container">
       <div className="your-vote">Your Vote</div>
