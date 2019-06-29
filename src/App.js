@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Route, BrowserRouter } from "react-router-dom";
 
 import "./App.css";
@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import LeaderBoard from "./pages/LeaderBoard";
 import NewQuestion from "./pages/NewQuestion";
 import Question from "./pages/Question";
+import Login from "./components/Login/Login";
 import { connect } from "react-redux";
 import * as actions from "./store/actions";
 
@@ -25,6 +26,12 @@ class App extends Component {
           <Route path="/questions/:id" component={Question} />
           <Route path="/leaderboard" component={LeaderBoard} />
           <Route path="/" exact component={Home} />
+        </div>
+      );
+    } else {
+      pages = (
+        <div className="page-container">
+          <Login />
         </div>
       );
     }

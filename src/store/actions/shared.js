@@ -1,7 +1,7 @@
 import * as actions from "./index";
 import * as api from "../../api";
 
-const default_auth_user = "tylermcginnis";
+const default_auth_user = null;
 
 export const handleInitialData = () => {
   return dispatch => {
