@@ -48,11 +48,14 @@ const QuestionList = ({
 
 const mapStateToProps = ({ questions, users, auth }) => {
   const currentUser = users[auth.userId];
+  console.log(Object.values(questions));
+  const answeredQuestionIds = Object.keys(currentUser.answers).reverse();
 
-  const answeredQuestionIds = Object.keys(currentUser.answers);
-  const unAnsweredQuestionIds = Object.keys(questions).filter(
-    q => answeredQuestionIds.indexOf(q) === -1
-  );
+  const orderedUnansweredQuestions = Object.values(questions)
+    .filter(q => answeredQuestionIds.indexOf(q.id) === -1)
+    .sort((q1, q2) => (q1.timestamp - q2.timestamp > 0 ? -1 : 1));
+
+  const unAnsweredQuestionIds = orderedUnansweredQuestions.map(q => q.id);
 
   return {
     questions,
