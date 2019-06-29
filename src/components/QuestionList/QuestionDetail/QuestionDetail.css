@@ -9,3 +9,15 @@
   font-weight: bold;
   padding: 10px;
 }
+
+.poll-not-exist {
+  margin: 40px;
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.poll-not-exist span {
+  font-size: 50px;
+  color: red;
+}
