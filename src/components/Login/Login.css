@@ -3,3 +3,23 @@
   justify-content: center;
   align-items: center;
 }
+.login-title {
+  position: relative;
+}
+
+.btn-create-user {
+  background-color: transparent;
+  border: none;
+  color: salmon;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.btn-create-user:hover {
+  color: red;
+}
+
+.btn-create-user:focus {
+  outline: 0;
+}
