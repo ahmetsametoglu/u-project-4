@@ -31,6 +31,20 @@ let users = {
       "6ni6ok3ym7mf1p33lnez": "optionTwo"
     },
     questions: ["6ni6ok3ym7mf1p33lnez", "xj352vofupe1dqz9emx13r"]
+  },
+  ahmet: {
+    id: "ahmet",
+    name: "ahmet",
+    avatarURL: "/assets/avatar-icons/1.png",
+    answers: {
+      "6ni6ok3ym7mf1p33lnez": "optionOne",
+      "8xf0y6ziyjabvozdd253nd": "optionTwo",
+      am8ehyc8byjqgar0jgpub9: "optionTwo",
+      loxhs1bqm25b708cmbf3g: "optionTwo",
+      vthrdm985a262al8qx3do: "optionTwo",
+      xj352vofupe1dqz9emx13r: "optionOne"
+    },
+    questions: []
   }
 };
 
@@ -166,6 +180,20 @@ function formatQuestion({ optionOneText, optionTwoText, author }) {
   };
 }
 
+function formatUser({ name, avatarURL }) {
+  const id = name
+    .toLowerCase()
+    .split(" ")
+    .join("");
+  return {
+    id: id,
+    name,
+    avatarURL,
+    answers: {},
+    questions: []
+  };
+}
+
 export function _saveQuestion(question) {
   return new Promise((res, rej) => {
     const authedUser = question.author;
@@ -216,6 +244,26 @@ export function _saveQuestionAnswer({ authedUser, qid, answer }) {
       };
 
       res();
+    }, 500);
+  });
+}
+
+export function _createUser(user) {
+  return new Promise((res, rej) => {
+    const formatedUser = formatUser(user);
+    const idExist = Object.keys(users).indexOf(formatedUser.id) !== -1;
+
+    if (idExist) {
+      rej({ err: "user already exist" });
+    }
+
+    setTimeout(() => {
+      users = {
+        ...users,
+        [formatedUser.id]: formatedUser
+      };
+
+      res(formatedUser);
     }, 500);
   });
 }
