@@ -4,10 +4,16 @@ export const users = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.RECEIVE_USERS:
       return { ...state, ...action.users };
+
     case actionTypes.SET_ANSWER_TO_QUESTION:
       return setAnswerToQuestion(state, action);
+
     case actionTypes.SAVE_QUESTION:
       return saveQuestion(state, action);
+
+    case actionTypes.CREATE_USER:
+      return createUser(state, action);
+
     default:
       return state;
   }
@@ -42,6 +48,19 @@ const saveQuestion = (state, action) => {
       questions: state[authedUser].questions.concat([questionId])
     }
   };
+  return {
+    ...state,
+    ...users
+  };
+};
+
+const createUser = (state, action) => {
+  const { user } = action;
+  const users = {
+    ...state,
+    [user.id]: user
+  };
+
   return {
     ...state,
     ...users
