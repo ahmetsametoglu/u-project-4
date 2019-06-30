@@ -1,6 +1,6 @@
 export { setAuthUser } from "./auth";
 export { handleInitialData } from "./shared";
-export { receiveUsers } from "./user";
+export { receiveUsers, handleCreateUser } from "./user";
 export {
   receiveQuestions,
   handleSetAnswerToQuestion,
