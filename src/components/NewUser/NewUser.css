@@ -1,0 +1,68 @@
+.new-user-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+}
+.new-user-name {
+  margin: 10px;
+  width: 300px;
+  border: 2px #dcdcdcb9 solid;
+  border-radius: 4px;
+  height: 35px;
+  padding: 10px;
+  text-align: center;
+}
+
+.new-user-name::placeholder {
+  margin-left: 10px;
+  color: #dcdcdcb9;
+}
+
+.avatar-list {
+  margin: 5px;
+  margin-bottom: 20px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px rgba(220, 220, 220, 0.616) solid;
+}
+
+.avatar-list-item {
+  padding: 5px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.new-user-button {
+  margin: 10px;
+  width: 400px !important;
+  height: 30px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #10b292;
+  color: #10b292;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  background-color: white;
+}
+
+.new-user-button:hover {
+  color: white;
+  background-color: #10b292;
+}
+.new-user-button:disabled {
+  color: white;
+  background-color: gainsboro;
+  border: none;
+  cursor: not-allowed;
+}
