@@ -1,6 +1,7 @@
 import "./NewQuestionForm.css";
 
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 function NewQuestionForm({ saveQuestion }) {
   const [optionOne, setOptionOne] = useState("");
@@ -51,5 +52,9 @@ function NewQuestionForm({ saveQuestion }) {
     </div>
   );
 }
+
+NewQuestionForm.prototype = {
+  saveQuestion: PropTypes.func.isRequired
+};
 
 export default NewQuestionForm;

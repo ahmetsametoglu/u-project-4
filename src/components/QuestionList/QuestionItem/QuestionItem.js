@@ -28,9 +28,8 @@ const QuestionItem = ({ question, owner }) => {
   );
 };
 
-export default QuestionItem;
-
 QuestionItem.propTypes = {
   question: PropTypes.object.isRequired,
   owner: PropTypes.object.isRequired
 };
+export default QuestionItem;

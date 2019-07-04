@@ -1,6 +1,7 @@
 import "./LeaderBoardItem.css";
 
 import React from "react";
+import PropTypes from "prop-types";
 
 const LeaderBoardItem = ({ user }) => {
   return (
@@ -39,6 +40,10 @@ const LeaderBoardItem = ({ user }) => {
       </div>
     </div>
   );
+};
+
+LeaderBoardItem.prototype = {
+  user: PropTypes.object.isRequired
 };
 
 export default LeaderBoardItem;

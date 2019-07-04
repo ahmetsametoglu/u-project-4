@@ -1,5 +1,6 @@
 import "./AnsweredQuestion.css";
 import React from "react";
+import PropTypes from "prop-types";
 import OptionItem from "./OptionItem/OptionItem";
 
 const AnsweredQuestion = ({ question, answer }) => {
@@ -25,6 +26,11 @@ const AnsweredQuestion = ({ question, answer }) => {
       />
     </div>
   );
+};
+
+AnsweredQuestion.prototype = {
+  question: PropTypes.object.isRequired,
+  answer: PropTypes.object.isRequired
 };
 
 export default AnsweredQuestion;

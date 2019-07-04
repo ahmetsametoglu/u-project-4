@@ -1,5 +1,6 @@
 import "./Login.css";
 import React, { Fragment, useState } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions";
 import LoginUserItem from "./LoginUserItem/LoginUserItem";
@@ -32,6 +33,11 @@ const Login = ({ users, login }) => {
       />
     </Fragment>
   );
+};
+
+Login.prototype = {
+  users: PropTypes.array.isRequired,
+  login: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {

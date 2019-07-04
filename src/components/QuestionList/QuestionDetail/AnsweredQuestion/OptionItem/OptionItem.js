@@ -2,6 +2,7 @@ import "./OptionItem.css";
 import { ProgressBar } from "react-bootstrap";
 
 import React from "react";
+import PropTypes from "prop-types";
 
 const OptionItem = props => {
   const percentage =
@@ -25,6 +26,11 @@ const OptionItem = props => {
       {props.thisOptionSelected && selectionContainer}
     </div>
   );
+};
+
+OptionItem.prototype = {
+  optionVoteCount: PropTypes.number.isRequired,
+  totalVoteCount: PropTypes.number.isRequired
 };
 
 export default OptionItem;

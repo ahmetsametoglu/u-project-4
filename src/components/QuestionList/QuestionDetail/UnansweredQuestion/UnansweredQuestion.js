@@ -1,5 +1,6 @@
 import "./UnansweredQuestion.css";
 import React, { Fragment, useState } from "react";
+import PropTypes from "prop-types";
 
 function UnansweredQuestion({ question, handleAnswer }) {
   const [answer, setAnswer] = useState("");
@@ -47,5 +48,10 @@ function UnansweredQuestion({ question, handleAnswer }) {
     </Fragment>
   );
 }
+
+UnansweredQuestion.prototype = {
+  question: PropTypes.object.isRequired,
+  handleAnswer: PropTypes.func.isRequired
+};
 
 export default UnansweredQuestion;
