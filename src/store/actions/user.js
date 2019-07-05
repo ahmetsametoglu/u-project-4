@@ -1,5 +1,6 @@
 import * as actionTypes from "./actionTypes";
 import { createUser } from "../../api";
+import { hideLoading, showLoading } from "react-redux-loading";
 
 export const receiveUsers = users => {
   return {
@@ -10,11 +11,18 @@ export const receiveUsers = users => {
 
 export const handleCreateUser = (name, avatarURL) => {
   return dispatch => {
-    return createUser(name, avatarURL).then(user => {
-      dispatch({
-        type: actionTypes.CREATE_USER,
-        user
+    dispatch(showLoading());
+    return createUser(name, avatarURL)
+      .then(user => {
+        dispatch({
+          type: actionTypes.CREATE_USER,
+          user
+        });
+      })
+      .then(() => dispatch(hideLoading()))
+      .catch(err => {
+        dispatch(hideLoading());
+        throw err;
       });
-    });
   };
 };
