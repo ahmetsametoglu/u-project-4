@@ -10,6 +10,7 @@ import Question from "./pages/Question";
 import Login from "./components/Login/Login";
 import { connect } from "react-redux";
 import * as actions from "./store/actions";
+import LoadingBar from "react-redux-loading";
 
 class App extends Component {
   componentDidMount() {
@@ -37,6 +38,7 @@ class App extends Component {
     }
     return (
       <BrowserRouter>
+        <LoadingBar />
         <Layout>{pages}</Layout>
       </BrowserRouter>
     );
