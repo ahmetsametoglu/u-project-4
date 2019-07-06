@@ -11,3 +11,18 @@
   box-sizing: border-box;
   transition: all 0.3s ease-out;
 }
+
+.modal-close-button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: transparent;
+  color: grey;
+  cursor: pointer;
+  padding: 5px;
+  margin: 0px 5px;
+}
+
+.modal-close-button:hover {
+  color: maroon;
+}

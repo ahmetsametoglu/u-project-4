@@ -22,6 +22,9 @@ class Modal extends Component {
             opacity: this.props.show ? "1" : "0"
           }}
         >
+          <div className="modal-close-button" onClick={this.props.modalClosed}>
+            close
+          </div>
           {this.props.children}
         </div>
       </Fragment>
