@@ -254,7 +254,7 @@ export function _createUser(user) {
     const idExist = Object.keys(users).indexOf(formatedUser.id) !== -1;
 
     if (idExist) {
-      rej({ err: "user already exist" });
+      rej({ message: "user already exist" });
     }
 
     setTimeout(() => {

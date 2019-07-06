@@ -7,6 +7,7 @@ import * as actions from "../../store/actions";
 
 const NewUser = props => {
   const [userName, setUserName] = useState("");
+  const [validationError, setValidationError] = useState("");
   const [avatarURL, setAvatarURL] = useState("/assets/avatar-icons/1.png");
 
   let avatars = [];
@@ -37,10 +38,11 @@ const NewUser = props => {
       .createUser(userName, avatarURL)
       .then(() => {
         setUserName("");
+        setValidationError("");
         props.onClose();
       })
       .catch(err => {
-        console.log(err);
+        setValidationError("* " + String(err.message));
       });
   };
 
@@ -55,8 +57,12 @@ const NewUser = props => {
           value={userName}
           onChange={event => {
             setUserName(event.target.value);
+            setValidationError("");
           }}
         />
+        {validationError !== "" && (
+          <div className="validation-error">{validationError}</div>
+        )}
 
         <button
           className="new-user-button"
